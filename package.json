@@ -1,0 +1,26 @@
+{
+  "name": "new-folder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShodiyevF/exambootcamp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShodiyevF/exambootcamp/issues"
+  },
+  "homepage": "https://github.com/ShodiyevF/exambootcamp#readme",
+  "dependencies": {
+    "apollo-server": "^3.3.0",
+    "express": "^4.17.1",
+    "graphql": "^15.6.0"
+  }
+}
