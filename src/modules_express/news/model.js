@@ -114,7 +114,7 @@ const deleteNews = async ({ new_id }) => {
 
 
 export {
-    createNews,
+    createNews,   
     updateTitleNews,
     updateBodyNews,
     updateViewNews,
