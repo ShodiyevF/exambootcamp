@@ -1,11 +1,13 @@
 import express from "express";
-import { createCategoriesCtrl, deleteCategoriesCtrl, updateCategoriesCtrl } from "./ctrl.js";
+import { createNewsCtrl, updateNewsCtrl, deleteNewsCtrl, filterNewsCtrl, sortNewsCtrl } from "./ctrl.js";
 
 const router = express.Router()
 
-router.route('/categories')
-    .post(createCategoriesCtrl)
-    .put(updateCategoriesCtrl)
-    .delete(deleteCategoriesCtrl)
+router.route('/news')
+    .get(filterNewsCtrl)
+    .get(sortNewsCtrl)
+    .post(createNewsCtrl)
+    .put(updateNewsCtrl)
+    .delete(deleteNewsCtrl)
 
 export default router

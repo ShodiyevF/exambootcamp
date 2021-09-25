@@ -1,9 +1,15 @@
 import { TOKEN, VERIFY } from "../../lib/jwt.js";
+// import { registerValidation } from "../../lib/validation.js";
 import { LOGIN, REGISTER } from "./model.js";
 
 const REGISTERctrl = async (req, res) => {
     try {
+        // let vali = registerValidation.validate(req.body)
+        // console.log(vali.error);
+        // if (vali.error) {
+        // } else{
         if (await REGISTER(req.body)) {
+            console.log('aa');
             res.json({
                 status: 200,
                 message: 'user has been registered',
@@ -15,6 +21,7 @@ const REGISTERctrl = async (req, res) => {
                 message: 'somethinks went wrong !'
             })
         }
+        // }
     } catch (error) {
         console.log(error);
     }
@@ -24,13 +31,11 @@ const LOGINctrl = async (req, res) => {
     try {
         if (await LOGIN(req.body)) {
             
-            const test = VERIFY(req.headers.token, 'test')
-            if (test.password === req.body.password) {
-                res.json({
-                    status: 200,
-                    message: 'user has been logined'
-                })
-            }
+            res.json({
+                status: 200,
+                message: 'user has been logined'
+            })
+            
             
         } else {
             res.json({

@@ -1,4 +1,4 @@
-create table exam;
+create database exam;
 
 drop table if exists users cascade;
 create table users(
@@ -6,7 +6,7 @@ create table users(
     first_name varchar(26) not null,
     last_name varchar(26) not null,
     password varchar(36) not null,
-    email varchar(26) not null,
+    email varchar(26) UNIQUE not null,
     specialist varchar(36) not null
 );
 
@@ -29,7 +29,8 @@ create table news(
     news_title varchar(126) not null,
     news_body text not null,
     news_time timestamptz default current_timestamp, 
-    news_views int, 
+    news_views int,
+    author_id smallint not null,
     categories_id int not null references categories(categories_id), 
     languages_id int not null references languages(languages_id) 
 );
